@@ -1,38 +1,47 @@
-.App {
-  text-align: center;
+.header__link {
+    line-height: 180%;
+    color: #0D2C49;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.contact_us_description {
+    font-style: normal;
+    font-weight: normal;
+    color: #8b8d8f;
+    font-size: 14px;
+    line-height: 173%;
+    margin-bottom: 5px !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.contact__us .col-form-label,
+.contact__us .form-control,
+.contact__us .form-check-label {
+    color: #8b8d8f;
+    font-size: 14px !important;
+    font-weight: normal;
+}
+
+.contact__us .form-control-sm {
+    background: #e3e8ee !important;
+    color: #4c4e4f;
+}
+
+.contact__us .form-control:focus,
+.contact__us .form-select-sm:focus {
+    border-color: #e3e8ee !important;
+    box-shadow: none !important;
+}
+
+.btn__contact {
+    background: #4D9621;
+    border-radius: 8px;
+    padding: 6px 30px;
+    color: white !important;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.contact__us .btn:focus {
+    outline: none;
+    box-shadow: none;
   }
-  to {
-    transform: rotate(360deg);
-  }
+.contact__us .form-check-input:focus {
+    box-shadow: none;
 }
+
