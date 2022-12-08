@@ -48,7 +48,6 @@ const Technical = () => {
         const updatedCheckedState = checkedState.map((item, index) =>
             index === position ? !item : item
         );
-
         setCheckedState(updatedCheckedState);
 
         const totalPrice = updatedCheckedState.reduce(

@@ -5,7 +5,7 @@ import "./styles.css";
 const Task = () => {
     const inputArr = [
         {
-            type: "text",
+            type: "number",
             id: 1,
             value: "",
         }
@@ -31,7 +31,7 @@ const Task = () => {
             [
                 ...arr,
                 {
-                    type: "text",
+                    type: "number",
                     value: "",
                     id: (arr.length + 1),
                 }
@@ -39,16 +39,59 @@ const Task = () => {
         );
     };
 
-    const handleChange = e => {
-        e.preventDefault();
+    const handleChange = (e, item) => {
 
-        const index = e.target.id;
-        setArr(s => {
-            const newArr = s.slice();
-            newArr[index].value = e.target.value;
-            return newArr;
-        });
+        const temp = e;
+        console.log(item);
+
+        const newArr = [...arr]
+
+        newArr.map(f => {
+            if(f.id === item.id){
+                f.value = e.target.value;
+            }
+        })
+        setArr(newArr);
+
+
+
+
+
+
+
+        // e.preventDefault();
+        // const index = e.target.id;
+        // setArr(s => {
+        //     const newArr = s.slice();
+        //     newArr[index].value = e.target.value;
+        //     return newArr;
+        // });
+
     };
+
+    const [value, setValue] = useState(0);
+    const [position, setPosition] = useState([]);
+
+    const selectedCheckBox = (e, item) =>{
+        console.log("e",e)
+
+        if(e.target.checked){
+            setValue(value + parseInt(item.value))
+            const newArr = [...position];
+            newArr.push(item.id);
+            setPosition(newArr);
+        }else{
+            setValue(value - parseInt(item.value))
+            const temp = position.filter(f => (f !==item.id))
+            setPosition(temp);
+        }
+
+        
+
+    }
+
+    // console.log("final array",arr);
+    console.log(`value=${value} position = ${position}`);
 
     return (
         <div className="container pt-5 mb-5">
@@ -83,17 +126,18 @@ const Task = () => {
                                 {arr.map((item, i) => {
                                     return (
                                         <>
-                                            <div className="row g-3 mb-3 d-flex justify-content-end">
+                                            <div key={i} className="row g-3 mb-3 d-flex justify-content-end">
                                                 <div className="col-sm-4">
                                                     <div className="form-check">
                                                         <input className="form-check-input" id="exampleCheck1"
                                                             type="checkbox"
+                                                            onChange={(e) => selectedCheckBox(e, item)}
                                                         />
                                                         <input
                                                             for="exampleCheck1"
                                                             placeholder={`Write a price ${item.id}`}
                                                             className="form-control form-control-sm form__control__sm"
-                                                            onChange={handleChange}
+                                                            onChange={(e) => handleChange(e, item)}
                                                             value={item.value}
                                                             id={i}
                                                             type={item.type}
@@ -110,7 +154,7 @@ const Task = () => {
                         <div className="row d-flex justify-content-end">
                             <label for="OutputIs" className="col-sm-2 col-form-label col-form-label-sm">Output is: </label>
                             <div className="col-sm-6">
-                                <label id="OutputIs" className="w-100 form__output">Selected </label>
+                                <label id="OutputIs" className="w-100 form__output">{`value=${value} position = ${position}`}</label>
                             </div>
                         </div>
                     </div>
