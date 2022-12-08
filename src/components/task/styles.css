@@ -1,0 +1,121 @@
+.header__link {
+    line-height: 180%;
+    color: #0D2C49;
+}
+
+.contact_us_description {
+    font-style: normal;
+    font-weight: normal;
+    color: #8b8d8f;
+    font-size: 14px;
+    line-height: 173%;
+    margin-bottom: 5px !important;
+}
+
+.contact__us .col-form-label,
+.contact__us .form-control,
+.contact__us .form-check-label {
+    color: #8b8d8f;
+    font-size: 14px !important;
+    font-weight: normal;
+}
+
+.contact__us .form__label {
+  background: #FFE6CC !important;
+  color: #4c4e4f;
+  font-size: 14px;
+  text-align: center;
+  padding: 3px 0px;
+  border-radius: 6px;
+  border: 2px solid #f6d8ba;
+}
+.contact__us .form__all__check {
+    background: #FFE6CC !important;
+    color: #4c4e4f;
+}
+.contact__us .form__output {
+    background: #E1D5E7;
+    color: #4c4e4f;
+    padding: 0px 12px;
+}
+/* .contact__us .form-control-sm {
+    background: #e3e8ee !important;
+    color: #4c4e4f;
+} */
+
+.contact__us .form-control:focus,
+.contact__us .form-select-sm:focus {
+    border-color: #e3e8ee !important;
+    box-shadow: none !important;
+}
+
+.btn__contact {
+    background: #0057D8;
+    border-radius: 8px;
+    padding: 6px 30px;
+    color: white !important;
+  }
+.contact__us .btn:focus {
+    outline: none;
+    box-shadow: none;
+  }
+.contact__us .form-check-input:focus {
+    box-shadow: none;
+}
+
+
+  h3 {
+    text-align: center;
+  }
+  
+  .topping {
+    margin-top: 0.3rem;
+    vertical-align: text-bottom;
+  }
+  
+  .result {
+    margin-top: 1rem;
+  }
+  
+  .toppings-list,
+  .total {
+    width: 30%;
+    margin: 0 auto;
+  }
+  
+  .toppings-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .toppings-list li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .toppings-list-item {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .toppings-list li:last-child {
+    border-top: 1px solid #ccc;
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+  
+  .toppings-list-item label {
+    vertical-align: text-bottom;
+    margin-left: 0.2rem;
+  }
+  
+  .total {
+    margin-top: 1rem;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .toppings-list,
+    .total {
+      width: 90%;
+    }
+  }
+  
