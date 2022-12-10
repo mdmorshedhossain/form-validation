@@ -44,7 +44,7 @@ const Contact = () => {
 
                     <form className="row g-3 contact__us" onSubmit={submitForm}>
                         <div className="col-md-6">
-                            <label for="InputFirstName" className="col-form-label col-form-label-sm">First Name <span className="text-danger">*</span></label>
+                            <label htmlFor="InputFirstName" className="col-form-label col-form-label-sm">First Name <span className="text-danger">*</span></label>
                             <input className="form-control form-control-sm" id="InputFirstName"
                                 type="text"
                                 placeholder="Write your First Name..."
@@ -54,7 +54,7 @@ const Contact = () => {
                             />
                         </div>
                         <div className="col-md-6">
-                            <label for="InputLastName" className="col-form-label col-form-label-sm">Last Name</label>
+                            <label htmlFor="InputLastName" className="col-form-label col-form-label-sm">Last Name</label>
                             <input className="form-control form-control-sm" id="InputLastName"
                                 type="text"
                                 placeholder="Write your Last Name..."
@@ -64,7 +64,7 @@ const Contact = () => {
                             />
                         </div>
                         <div className="col-md-6">
-                            <label for="InputEmailAddress" className="col-form-label col-form-label-sm">Email address <span className="text-danger">*</span></label>
+                            <label htmlFor="InputEmailAddress" className="col-form-label col-form-label-sm">Email address <span className="text-danger">*</span></label>
                             <input className="form-control form-control-sm" id="InputEmailAddress"
                                 type="email"
                                 placeholder="Write your email address..."
@@ -74,7 +74,7 @@ const Contact = () => {
                             />
                         </div>
                         <div className="col-md-6">
-                            <label for="InputContactNumber" className="col-form-label col-form-label-sm">Contact Number <span className="text-danger">*</span></label>
+                            <label htmlFor="InputContactNumber" className="col-form-label col-form-label-sm">Contact Number <span className="text-danger">*</span></label>
                             <input className="form-control form-control-sm" id="InputContactNumber"
                                 type="phone"
                                 placeholder="Contact Number"
@@ -84,7 +84,7 @@ const Contact = () => {
                             />
                         </div>
                         <div className="col-md-12 ">
-                            <label for="InputComments" className="col-form-label col-form-label-sm">Message <span className="text-danger">*</span></label>
+                            <label htmlFor="InputComments" className="col-form-label col-form-label-sm">Message <span className="text-danger">*</span></label>
                             <textarea className="form-control form-control-sm" id="InputComments" rows="4"
                                 type="text"
                                 placeholder="Write your message here ..."
@@ -106,7 +106,7 @@ const Contact = () => {
                                     // value={"sunny leone"}
                                     // onChange={(e) => setInputField({ ...inputField, checkbox_message: e.target.value })}
                                 />
-                                <label className="form-check-label" for="exampleCheck1">I agree to the Privacy Policy and Terms of Service.</label>
+                                <label className="form-check-label" htmlFor="exampleCheck1">I agree to the Privacy Policy and Terms of Service.</label>
                             </div>
                         </div>
                         <div className="col-md-12 pt-3 text-center">

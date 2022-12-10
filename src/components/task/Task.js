@@ -3,6 +3,11 @@ import { useState } from 'react';
 import "./styles.css";
 
 const Task = () => {
+
+    const [value, setValue] = useState(0);
+    const [position, setPosition] = useState([]);
+    const [result, setResult] = useState(false);
+
     const inputArr = [
         {
             type: "number",
@@ -12,19 +17,6 @@ const Task = () => {
     ];
 
     const [arr, setArr] = useState(inputArr);
-
-    // const addInput = () => {
-    //     setArr(s => {
-    //         return [
-    //             ...s,
-    //             {
-    //                 type: "text",
-    //                 value: ""
-    //             }
-    //         ];
-    //     });
-    // };
-
 
     const addInput = () => {
         setArr(
@@ -42,56 +34,54 @@ const Task = () => {
     const handleChange = (e, item) => {
 
         const temp = e;
-        console.log(item);
 
         const newArr = [...arr]
 
         newArr.map(f => {
-            if(f.id === item.id){
+            if (f.id === item.id) {
                 f.value = e.target.value;
             }
         })
         setArr(newArr);
 
-
-
-
-
-
-
-        // e.preventDefault();
-        // const index = e.target.id;
-        // setArr(s => {
-        //     const newArr = s.slice();
-        //     newArr[index].value = e.target.value;
-        //     return newArr;
-        // });
-
     };
 
-    const [value, setValue] = useState(0);
-    const [position, setPosition] = useState([]);
-
-    const selectedCheckBox = (e, item) =>{
-        console.log("e",e)
+    const handleAllCheckBox = (e) =>{
+        setResult(e.target.checked)
 
         if(e.target.checked){
+            let sum = 0;
+            let newArray = [];
+            arr.map(i =>{
+                sum = sum + parseInt(i.value);
+                newArray.push(i.id);
+            })
+            setValue(sum)
+            setPosition(newArray);
+        }else{
+            setValue(0)
+            setPosition([]);
+        }
+        
+    }
+
+
+    const selectedCheckBox = (e, item) => {
+
+        if (e.target.checked) {
+
             setValue(value + parseInt(item.value))
             const newArr = [...position];
             newArr.push(item.id);
             setPosition(newArr);
-        }else{
+
+        } else {
             setValue(value - parseInt(item.value))
-            const temp = position.filter(f => (f !==item.id))
+            const temp = position.filter(f => (f !== item.id))
             setPosition(temp);
         }
 
-        
-
     }
-
-    // console.log("final array",arr);
-    console.log(`value=${value} position = ${position}`);
 
     return (
         <div className="container pt-5 mb-5">
@@ -100,7 +90,7 @@ const Task = () => {
                     <div className="col-6">
                         <div className="row g-3 mb-3 d-flex justify-content-end">
                             <div className="col-sm-3">
-                                <p for="NoOfTextbox" className="form__label">No. Of Textbox:</p>
+                                <p htmlFor="NoOfTextbox" className="form__label">No. Of Textbox:</p>
                             </div>
                             <div className="col-sm-4">
                                 <p className="form-control form-control-sm">{arr.length}</p>
@@ -116,8 +106,11 @@ const Task = () => {
                                         <div className="form-check">
                                             <input className="form-check-input" id="exampleCheck1"
                                                 type="checkbox"
+                                                onChange={(e) => handleAllCheckBox(e)}
                                             />
-                                            <p className="form__label">All Check</p>
+                                            <p className="form__label" 
+
+                                            >All Check</p>
                                         </div>
                                     </div>
                                 </div>
@@ -126,15 +119,18 @@ const Task = () => {
                                 {arr.map((item, i) => {
                                     return (
                                         <>
-                                            <div key={i} className="row g-3 mb-3 d-flex justify-content-end">
+                                            <div key={item.id} className="row g-3 mb-3 d-flex justify-content-end">
                                                 <div className="col-sm-4">
                                                     <div className="form-check">
-                                                        <input className="form-check-input" id="exampleCheck1"
+                                                        <input
+                                                            // id={item.id}
+                                                            checked={position.includes(item.id)}
+                                                            className="form-check-input"
                                                             type="checkbox"
                                                             onChange={(e) => selectedCheckBox(e, item)}
                                                         />
                                                         <input
-                                                            for="exampleCheck1"
+                                                            htmlFor="exampleCheck1"
                                                             placeholder={`Write a price ${item.id}`}
                                                             className="form-control form-control-sm form__control__sm"
                                                             onChange={(e) => handleChange(e, item)}
@@ -152,9 +148,9 @@ const Task = () => {
                             </div>
                         </div>
                         <div className="row d-flex justify-content-end">
-                            <label for="OutputIs" className="col-sm-2 col-form-label col-form-label-sm">Output is: </label>
+                            <label htmlFor="OutputIs" className="col-sm-2 col-form-label col-form-label-sm">Output is: </label>
                             <div className="col-sm-6">
-                                <label id="OutputIs" className="w-100 form__output">{`value=${value} position = ${position}`}</label>
+                                <label id="OutputIs" className="w-100 form__output">{`Selected Total Amount = ${value} Selected Position = ${position}`}</label>
                             </div>
                         </div>
                     </div>
