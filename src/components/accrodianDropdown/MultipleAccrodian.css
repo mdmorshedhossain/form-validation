@@ -1,0 +1,131 @@
+
+/* accrodian  start*/
+.resources__macro .accordion-item {
+    background-color: #fff;
+  }
+  
+  .resources__macro .accordion-flush .accordion-item .accordion-button {
+    border-top: 0;
+    border-radius: 3px;
+    border: 2px solid #d5cece;
+    background: #264868;
+    color: #FFFFFF;
+  }
+  
+  .resources__macro .accordion-flush .accordion-item:first-child {
+    border-top: 0;
+    border-radius: 3px;
+    border: 1px solid #264868;
+  }
+  
+  .resources__macro .accordion-item:not(:first-of-type) {
+    border-top: 0;
+    border-radius: 3px;
+    border: 1px solid #264868;
+    margin: 16px 0px;
+  }
+  
+  .resources__macro .accordion-flush .accordion-item:last-child {
+    border-bottom: 0;
+    border-radius: 3px;
+    border: 1px solid #264868;
+    margin-top: 16px !important;
+  }
+  
+  .resources__macro .accordion-button::after {
+    flex-shrink: 0;
+    content: "";
+    background-image: url('../../images/arrow_down1.png');
+    background-repeat: no-repeat;
+    background-size: 1.25rem;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #d0d7d0;
+    transition: transform .2s ease-in-out;
+    top: 18px;
+    position: absolute;
+    right: 13px;
+  }
+  
+  .resources__macro .accordion-button {
+    position: relative;
+    display: inherit;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+    border: 0;
+    border-radius: 0;
+    overflow-anchor: none;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, border-radius .15s ease;
+  }
+  
+  .resources__macro button {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  
+  .resources__macro button:focus {
+    outline: none !important;
+  }
+  
+  .accrodian__img img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .accrodian__vhr {
+    border-left: 2px solid #FFFFFF;
+  }
+  
+  .accrodian__title {
+    padding-left: 20px;
+  }
+  
+  .accrodian__title p {
+    margin-bottom: 0px !important;
+  }
+  
+  .accrodian__details p {
+    margin-bottom: 0px !important;
+  }
+  
+  .accrodian__details {
+    color: #fff;
+    padding-left: 20px;
+  }
+  
+  .electronic__title2 {
+    padding-left: 20px;
+  }
+  
+  
+  .card__title {
+    color: #000;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    line-height: 120%;
+    font-size: 16px;
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 0rem !important;
+  }
+  
+  .btn__load__more {
+    background: #264868;
+    border-radius: 10px;
+    font-size: 14px;
+    padding: 8px 20px;
+    color: white !important;
+    text-decoration: none;
+  }
+  
+  .btn__load__more:hover {
+    color: white !important;
+  }
+  
+  /* accrodian  end*/
